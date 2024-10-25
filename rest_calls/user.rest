@@ -1,0 +1,26 @@
+@local_domain = http://localhost:8000
+
+
+
+### Register
+curl -X POST {{local_domain}}/api/v1/users/register \
+     -H "Content-Type: application/json" \
+     -d '{
+        "username" : "aliakbari",
+        "firstname": "ali",
+        "lastname": "akbari",
+        "password" : "1234"
+     }'
+
+
+
+
+
+### Login
+curl -X POST {{local_domain}}/api/v1/users/login \
+     -H "Content-Type: application/json" \
+     -d '{"username" : "aliakbari",
+          "password" : "1234"
+          }'
+
+

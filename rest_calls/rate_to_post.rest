@@ -1,0 +1,11 @@
+@local_domain = http://localhost:8000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMTk0ODA3LCJpYXQiOjE3Mjk3NjI4MDcsImp0aSI6IjFkNzdiM2JlMzRkZjQ1MmQ5NzNlYTU5NWVkZmEwZWNhIiwidXNlcl9pZCI6MTB9.JfAmXNXmzd8mSqlAxUKk18VvFrAjjIPaVuAfZXT40xM
+
+
+curl -X POST {{local_domain}}/api/v1/rate/create \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer {{token}}" \
+     -d '{
+         "post_id":1 , 
+         "rate":4
+         }'

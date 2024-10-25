@@ -1,0 +1,31 @@
+@local_domain = http://localhost:8000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMwMTk0ODA3LCJpYXQiOjE3Mjk3NjI4MDcsImp0aSI6IjFkNzdiM2JlMzRkZjQ1MmQ5NzNlYTU5NWVkZmEwZWNhIiwidXNlcl9pZCI6MTB9.JfAmXNXmzd8mSqlAxUKk18VvFrAjjIPaVuAfZXT40xM
+
+
+### create a post
+
+curl -X POST {{local_domain}}/api/v1/posts/create \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer {{token}}" \
+     -d '{"title" : "first_post" , 
+        "content" :"this is the first post created"}'
+
+### get all posts
+
+curl -X GET {{local_domain}}/api/v1/posts/all \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer {{token}}" 
+
+
+### get all posts of a user : 
+
+curl -X GET {{local_domain}}/api/v1/posts/user/10 \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer {{token}}" 
+
+
+### get detailed view of a post : 
+
+curl -X GET {{local_domain}}/api/v1/posts/1 \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer {{token}}" 
